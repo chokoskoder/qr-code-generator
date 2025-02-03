@@ -8,9 +8,7 @@ const QRController = require('../qr-generator-check/qrController');
 
 module.exports = (redisClient) => {
     const qrController = new QRController(redisClient);
-  
     router.post('/generate', qrController.generateQR);
     router.get('/verify', qrController.verifyQR);
-  
     return router;
   };
